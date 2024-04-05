@@ -1,0 +1,16 @@
+import spacy
+
+def analyze_sentence(sentence):
+    # Load the spaCy French model
+    nlp = spacy.load("fr_core_news_sm")
+
+    # Process the input sentence
+    doc = nlp(sentence)
+
+    # Extract and print the token text and its grammatical case
+    for token in doc:
+        print(f"Token: {token.text}, Grammatical Case: {token.dep_}")
+
+# Example usage
+sentence_to_analyze = "Le renard brun rapide saute par-dessus le chien paresseux."
+analyze_sentence(sentence_to_analyze)
